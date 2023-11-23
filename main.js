@@ -22,6 +22,8 @@ for (var i = 0; i < cantidadElementos; i++) {
 
     let localStorage_text = "Clave: " + clave + ", Valor: " + valor
     alert(localStorage_text)
+    document.getElementById("localSorague_cookie").innerHTML=localStorage_text;
+    
 }
 
 

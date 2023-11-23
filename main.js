@@ -32,3 +32,18 @@ for (var nombreCookie in todasLasCookies) {
     listItem.textContent = nombreCookie + ': ' + valorCookie;
     listaCookies.appendChild(listItem);
 }
+//localstorage_______________________________________________________________________________________________________________
+var cantidadElementos = localStorage.length;
+Total_localStorage = localStorage
+var listaStorage = document.getElementById('listaStorage');
+// Iterar a través de las claves y obtener los valores
+for (var i = 0; i < cantidadElementos; i++) {
+    var clave = localStorage.key(i);
+    var valor = localStorage.getItem(clave);
+
+    console.log("Clave: " + clave + ", Valor: " + valor);
+    var listItem_st = document.createElement('li');
+    listItem_st.textContent = clave + ': ' + valor;
+    listaStorage.appendChild(listItem_st);
+    // listaStorage
+}

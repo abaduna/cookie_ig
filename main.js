@@ -1,6 +1,12 @@
 // var lasCookies = document.cookie;
 
-
+var fecha = new Date();
+var dia = fecha.getDate();
+var mes = fecha.getMonth() + 1;
+var ano = fecha.getFullYear();
+var fechacompleta = dia+"/"+mes+"/"+ano;
+var objetivo = document.getElementById('texto_nav1');
+objetivo.innerHTML = fechacompleta;
 function leerCookie(nombre_cookie) {
     var cookies = document.cookie.split(";");
     for (var i = 0; i < cookies.length; i++) {

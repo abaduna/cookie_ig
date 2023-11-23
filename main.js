@@ -1,17 +1,12 @@
 // var lasCookies = document.cookie;
 
-var fecha = new Date();
-var dia = fecha.getDate();
-var mes = fecha.getMonth() + 1;
-var ano = fecha.getFullYear();
-var fechacompleta = dia+"/"+mes+"/"+ano;
-var objetivo = document.getElementById('texto_nav1');
-objetivo.innerHTML = fechacompleta;
-let localStorage_ig = Window.localStorage
+
+
+
 console.log(localStorage_ig);
 localStorage.setItem("miGato", "Juan");
 let mostrarEnPantalla = localStorage.getItem("miGato");
-console.log(mostrarEnPantalla);
+
 let mostrarEnPantalla_id = localStorage.getItem("miGato");
 
 var cantidadElementos = localStorage.length;
@@ -27,9 +22,25 @@ for (var i = 0; i < cantidadElementos; i++) {
 }
 
 
+function getCookies() {
+    var cookies = {};
+    var cookiesArray = document.cookie.split(';');
 
+    for (var i = 0; i < cookiesArray.length; i++) {
+        var cookie = cookiesArray[i].trim();
+        var cookieParts = cookie.split('=');
+        var nombre = cookieParts[0];
+        var valor = cookieParts[1];
+        cookies[nombre] = valor;
+    }
 
+    return cookies;
+}
 
+var todasLasCookies = getCookies();
+console.log(todasLasCookies);
+
+document.getElementById("localSorague_cookie_v2").innerHTML=todasLasCookies;
 function leerCookie(nombre_cookie) {
     var cookies = document.cookie.split(";");
     for (var i = 0; i < cookies.length; i++) {

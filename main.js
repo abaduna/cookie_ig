@@ -7,10 +7,11 @@ function leerCookie(nombre_cookie) {
       var cookie = cookies[i].trim();
       if (cookie.startsWith(nombre_cookie + "=")) {
           console.log(cookies[i]);
-          alert(ds_user_id)
+          var str=cookies[i] 
         break;
       }
     }
   }
-  alert( document.cookie )
-  leerCookie(ds_user_id)
+  document.getElementById("h2_title").innerHTML=str;
+  document.getElementById("p_cookies").innerHTML=cookies;
+  
